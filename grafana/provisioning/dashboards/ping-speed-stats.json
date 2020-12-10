@@ -29,6 +29,12 @@
         "#d44a3a"
       ],
       "datasource": "prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 50,
@@ -77,7 +83,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "speedtest_bits_per_second{direction=\"downstream\", instance=\"speedtest:9696\", job=\"speedtest\"}",
       "targets": [
         {
           "expr": "speedtest_bits_per_second{direction=\"downstream\"}",
@@ -109,6 +115,12 @@
         "#d44a3a"
       ],
       "datasource": "prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 20,
@@ -157,7 +169,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "speedtest_bits_per_second{direction=\"upstream\", instance=\"speedtest:9696\", job=\"speedtest\"}",
       "targets": [
         {
           "expr": "speedtest_bits_per_second{direction=\"upstream\"}",
@@ -190,6 +202,12 @@
       ],
       "datasource": "prometheus",
       "decimals": 2,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "ms",
       "gauge": {
         "maxValue": 100,
@@ -238,7 +256,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "speedtest_ping{instance=\"speedtest:9696\", job=\"speedtest\"}",
       "targets": [
         {
           "expr": "speedtest_ping",
@@ -249,7 +267,6 @@
       ],
       "thresholds": "",
       "title": "speedtest ping",
-      "transparent": false,
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -267,13 +284,21 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
         "h": 9,
         "w": 12,
         "x": 0,
         "y": 9
       },
+      "hiddenSeries": false,
       "id": 6,
       "legend": {
         "avg": false,
@@ -288,7 +313,11 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
+      "pluginVersion": "7.3.4",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -308,6 +337,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "speedtest",
       "tooltip": {
@@ -348,9 +378,10 @@
     },
     {
       "cards": {
+        "cardHSpacing": 2,
         "cardMinWidth": 5,
         "cardRound": null,
-        "cardSpacing": 2
+        "cardVSpacing": 2
       },
       "color": {
         "cardColor": "#b4ff00",
@@ -358,14 +389,27 @@
         "colorScheme": "interpolateGnYlRd",
         "defaultColor": "#757575",
         "exponent": 0.5,
-        "mode": "spectrum",
-        "thresholds": []
-      },
-      "data": {
-        "decimals": null,
-        "unitFormat": "short"
+        "mode": "discrete",
+        "thresholds": [
+          {
+            "$$hashKey": "object:372",
+            "color": "#F2495C",
+            "value": "0"
+          },
+          {
+            "$$hashKey": "object:376",
+            "color": "#73BF69",
+            "value": "1"
+          }
+        ]
       },
       "datasource": "prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 9,
         "w": 12,
@@ -379,10 +423,17 @@
       },
       "links": [],
       "nullPointMode": "as empty",
+      "pageSize": 15,
+      "seriesFilterIndex": -1,
+      "statusmap": {
+        "ConfigVersion": "v1"
+      },
       "targets": [
         {
           "expr": "probe_success",
           "format": "time_series",
+          "hide": false,
+          "instant": false,
           "interval": "",
           "intervalFactor": 1,
           "legendFormat": "{{instance}}",
@@ -391,21 +442,23 @@
       ],
       "title": "Panel Title",
       "tooltip": {
-        "show": true
+        "freezeOnClick": true,
+        "items": [],
+        "show": true,
+        "showItems": false
       },
       "type": "flant-statusmap-panel",
       "useMax": true,
+      "usingPagination": false,
       "xAxis": {
-        "labelFormat": "%a %m/%d",
-        "minBucketWidthToShowWeekends": 4,
-        "show": true,
-        "showCrosshair": true,
-        "showWeekends": true
+        "show": true
       },
       "yAxis": {
-        "show": true,
-        "showCrosshair": false
-      }
+        "maxWidth": -1,
+        "minWidth": -1,
+        "show": true
+      },
+      "yAxisSort": "metrics"
     },
     {
       "aliasColors": {},
@@ -413,13 +466,21 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
         "h": 9,
         "w": 24,
         "x": 0,
         "y": 18
       },
+      "hiddenSeries": false,
       "id": 4,
       "legend": {
         "avg": false,
@@ -433,9 +494,13 @@
       "lines": true,
       "linewidth": 1,
       "links": [],
-      "minSpan": 2,
+      "maxPerRow": 12,
       "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
+      "pluginVersion": "7.3.4",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -456,6 +521,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "http duration",
       "tooltip": {
@@ -495,7 +561,8 @@
       }
     }
   ],
-  "schemaVersion": 16,
+  "refresh": false,
+  "schemaVersion": 26,
   "style": "dark",
   "tags": [
     "speedtest",
@@ -505,7 +572,7 @@
     "list": []
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
@@ -536,5 +603,5 @@
   "timezone": "browser",
   "title": "internet connection",
   "uid": "o9mIe_Aik",
-  "version": 8
+  "version": 1
 }
