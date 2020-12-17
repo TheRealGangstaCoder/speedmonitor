@@ -63,7 +63,7 @@
           "value": 2
         }
       ],
-      "maxDataPoints": 100,
+      "maxDataPoints": 1000,
       "nullPointMode": "connected",
       "nullText": null,
       "postfix": "",
@@ -149,7 +149,7 @@
           "value": 2
         }
       ],
-      "maxDataPoints": 100,
+      "maxDataPoints": 1000,
       "nullPointMode": "connected",
       "nullText": null,
       "postfix": "",
@@ -236,7 +236,7 @@
           "value": 2
         }
       ],
-      "maxDataPoints": 100,
+      "maxDataPoints": 1000,
       "nullPointMode": "connected",
       "nullText": null,
       "postfix": "",
@@ -572,7 +572,7 @@
     "list": []
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {
