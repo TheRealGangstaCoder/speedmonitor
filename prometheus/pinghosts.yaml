@@ -1,5 +1,5 @@
 - targets:  # url;humanname;routing;switch
     - http://google.com;google.com;external;internetbox
     - http://github.com;github.com;external;internetbox
-    - http://rmdesign.fr;rmdesign.fr;external;internetbox
-    - http://192.168.1.170;jeedom;local;internetbox
+    - http://amazon.com;amazon.com;external;internetbox
+    - http://192.168.0.2;monster;local;internetbox
