@@ -97,7 +97,7 @@
           "refId": "A"
         }
       ],
-      "title": "Download speed",
+      "title": "Avg download speed",
       "type": "gauge"
     },
     {
@@ -178,7 +178,7 @@
           "refId": "A"
         }
       ],
-      "title": "Upload speed",
+      "title": "Avg upload speed",
       "type": "gauge"
     },
     {
@@ -252,106 +252,104 @@
           "refId": "A"
         }
       ],
-      "title": "speedtest ping",
+      "title": "latency (ping)",
       "type": "gauge"
     },
     {
-      "aliasColors": {},
-      "bars": true,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "prometheus",
-      "fill": 1,
-      "fillGradient": 0,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 20,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "Mbits"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 0,
         "y": 9
       },
-      "hiddenSeries": false,
       "id": 6,
-      "legend": {
-        "alignAsTable": false,
-        "avg": false,
-        "current": false,
-        "hideEmpty": false,
-        "hideZero": false,
-        "max": true,
-        "min": true,
-        "rightSide": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": false,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "null",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": [
+            "max",
+            "min"
+          ],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
       },
-      "percentage": false,
       "pluginVersion": "8.0.6",
-      "pointradius": 5,
-      "points": true,
-      "renderer": "flot",
       "repeat": null,
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
+          "exemplar": true,
           "expr": "speedtest_bits_per_second{}",
           "format": "time_series",
+          "instant": false,
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "{{direction}}",
           "refId": "A"
         }
       ],
-      "thresholds": [],
       "timeFrom": null,
-      "timeRegions": [],
       "timeShift": null,
       "title": "speedtest",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:55",
-          "format": "Mbits",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:56",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
+      "type": "timeseries"
     },
     {
       "cards": {
@@ -411,7 +409,7 @@
           "refId": "A"
         }
       ],
-      "title": "Panel Title",
+      "title": "Uptime",
       "tooltip": {
         "extraInfo": "",
         "freezeOnClick": true,
