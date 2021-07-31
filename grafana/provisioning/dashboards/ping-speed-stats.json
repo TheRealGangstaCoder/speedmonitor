@@ -142,7 +142,7 @@
               }
             ]
           },
-          "unit": "MBs"
+          "unit": "Mbits"
         },
         "overrides": []
       },
@@ -581,5 +581,5 @@
   "timezone": "browser",
   "title": "internet connection",
   "uid": "o9mIe_Aik",
-  "version": 2
+  "version": 3
 }
